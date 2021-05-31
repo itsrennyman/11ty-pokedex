@@ -1,0 +1,15 @@
+---
+title: "Pokemon List"
+data: pokemon
+---
+
+{% extends 'layouts/main.njk' %}
+{% block content %}
+    <ul>
+        {% for pkmn in pokemon %}
+            <li>
+                {{ pkmn.name }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
