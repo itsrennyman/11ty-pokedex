@@ -2,3 +2,4 @@ node_modules/
 _site/
 .cache/
 .netlify/
+src/_includes/assets/css/tailwind.css
