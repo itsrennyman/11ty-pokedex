@@ -4,14 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "predev": "npm run tailwind:process",
     "dev": "npx @11ty/eleventy --serve",
-    "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "npm run tailwind:process",
+    "build": "NODE_ENV=production ELEVENTY_ENV=production npx @11ty/eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind:process": "npx postcss src/scss/tailwind.scss --o src/_includes/assets/css/tailwind.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@11ty/eleventy": "^0.12.1"
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "autoprefixer": "^10.2.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.2"
   }
 }
