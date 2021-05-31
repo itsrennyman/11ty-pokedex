@@ -24,8 +24,6 @@ module.exports = function (config) {
   config.addNunjucksAsyncShortcode("image", imageShortcode);
   config.addLiquidShortcode("image", imageShortcode);
   config.addJavaScriptFunction("image", imageShortcode);
-  //config.addPassthroughCopy({ "./_tmp/css/tailwind.css": "./tailwind.css" });
-  config.addPassthroughCopy({ "./_tmp/images": "./images" });
 
   // UcFirst
   config.addNunjucksFilter(
