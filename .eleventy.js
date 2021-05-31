@@ -3,7 +3,7 @@ const Image = require("@11ty/eleventy-img");
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
     widths: [600],
-    formats: ["avif", "jpeg"],
+    formats: ["avif", "png"],
     urlPath: "/images/",
     outputDir: "./_site/images",
   });
@@ -31,7 +31,7 @@ module.exports = function (config) {
     (value) => value.charAt(0).toUpperCase() + value.slice(1)
   );
 
-  //nl2space
+  // nl2space
   config.addNunjucksFilter("nl2space", (str) =>
     str ? str.replace(/\r|\n|\r\n/g, " ") : ""
   );
