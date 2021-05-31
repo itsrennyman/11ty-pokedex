@@ -1,6 +1,7 @@
 node_modules/
 _site/
 _tmp/
+img/
 .cache/
 .netlify/
 src/_includes/assets/css/tailwind.css
