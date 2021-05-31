@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "eleventy --serve & postcss src/scss/tailwind.scss --o _tmp/tailwind.css --watch",
+    "dev": "eleventy --serve && NODE_ENV=development postcss src/scss/tailwind.scss --o _tmp/tailwind.css --watch",
     "build": "ELEVENTY_ENV=production eleventy && NODE_ENV=production postcss src/scss/tailwind.scss --o _site/tailwind.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

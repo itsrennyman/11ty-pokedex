@@ -1,7 +1,6 @@
 module.exports = function (config) {
-  config.addPassthroughCopy({
-    "src/_includes/assets/css/tailwind.css": "./tailwind.css",
-  });
+  config.addWatchTarget("./_tmp/tailwind.css");
+  config.addPassthroughCopy({ "./_tmp/tailwind.css": "./tailwind.css" });
 
   return {
     dir: {
