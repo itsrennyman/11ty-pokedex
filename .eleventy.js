@@ -38,7 +38,7 @@ module.exports = function (config) {
 
   // Sanitize
   config.addNunjucksFilter("sanitize", (str) =>
-    str.replace(/[^a-zA-Z0-9]/g, "")
+    str.replace(/[^a-zA-Z0-9 é.]/g, "")
   );
 
   return {
