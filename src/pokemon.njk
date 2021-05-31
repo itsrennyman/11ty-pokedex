@@ -10,25 +10,25 @@ permalink: '/pokemon/{{pkmn.name|slug}}/'
 
 {% extends 'layouts/main.njk' %}
 {% block content %}
-  <div class="h-screen p-7 sm:p-10 bg-green-300 flex flex-col" style="background-color:{{ colors[pkmn.types[0]] }}">
+  <div class="h-screen p-6 sm:p-10 bg-green-300 flex flex-col" style="background-color:{{ colors[pkmn.types[0]] }}">
     <div class="flex justify-between">
       {% if pagination.href.previous %}
-        <a href="{{ pagination.href.previous }}" class="items-center text-white text-2xl font-extrabold">
+        <a href="{{ pagination.href.previous }}" class="items-center text-white text-md sm:text-2xl font-extrabold">
             Previous
             <div class="text-white text-sm font-bold"></div>
         </a>
       {% else %}&nbsp;{% endif %}
       {% if pagination.href.next %}
-        <a href="{{ pagination.href.next }}" class="text-right items-center text-white text-2xl font-extrabold">
+        <a href="{{ pagination.href.next }}" class="text-right items-center text-white text-md sm:text-2xl font-extrabold">
             Next
             <div class="text-white text-sm font-bold"></div>
         </a>
       {% else %}&nbsp;{% endif %}
     </div>
-    <h2 class="order-1 text-white text-2xl font-extrabold">
+    <h2 class="order-1 text-white text-md sm:text-2xl font-extrabold">
       # {{ pkmn.id }}
     </h2>
-    <h1 class="order-1 text-white text-5xl font-extrabold tracking-tight mt-2">
+    <h1 class="order-1 text-white text-3xl sm:text-5xl font-extrabold tracking-tight mt-2">
       {{ pkmn.name | ucfirst }}
     </h1>
     <div class="flex flex-1 justify-evenly items-center flex-col sm:flex-row">
@@ -40,7 +40,7 @@ permalink: '/pokemon/{{pkmn.name|slug}}/'
       <div class="flex flex-col space-y-8 items-center">
         <div class="flex space-x-10">
           {% for type in pkmn.types %}
-            <div class="rounded-full h-24 w-24 flex items-center justify-center shadow-md p-5" style="background-color:{{ colors[type] }}">
+            <div class="rounded-full h-16 sm:h-24 w-16 sm:w-24 flex items-center justify-center shadow-md p-3 sm:p-5" style="background-color:{{ colors[type] }}">
               {% image "./src/_includes/assets/types/" + type + ".svg",
               type,
               "70px 70px" %}
@@ -48,7 +48,7 @@ permalink: '/pokemon/{{pkmn.name|slug}}/'
           {% endfor %}
         </div>
 
-        <div class="flex max-w-sm text-white text-2xl font-extrabold text-center">
+        <div class="hidden sm:flex max-w-sm text-white text-2xl font-extrabold text-center">
           {{ pkmn.description | nl2space | sanitize }}
         </div>
       </div>
