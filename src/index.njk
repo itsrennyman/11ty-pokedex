@@ -3,12 +3,13 @@ title: "Pokemon List"
 data: pokemon
 ---
 
+{% import './_includes/macros/pokemon.njk' as macro %}
 {% extends 'layouts/main.njk' %}
 {% block content %}
     <ul>
         {% for pkmn in pokemon %}
             <li>
-                {{ pkmn.name }}
+                {{ macro.pokemon(pkmn.name, pkmn.url) }}
             </li>
         {% endfor %}
     </ul>

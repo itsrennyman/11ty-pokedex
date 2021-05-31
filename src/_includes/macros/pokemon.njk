@@ -1,0 +1,9 @@
+{% macro pokemon(name, url) %}
+    <div>
+        <hr/>
+        <h2>
+            <a href="/pokemon/{{ name | slug }}">{{ name }}</a>
+        </h2>
+        <p>{{ url }}</p>
+    </div>
+{% endmacro %}
