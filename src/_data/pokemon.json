@@ -1,38 +1,56 @@
 [
   {
+    "id": "001",
     "name": "bulbasaur",
+    "types": ["grass", "poison"],
     "url": "https://pokeapi.co/api/v2/pokemon/1/"
   },
   {
+    "id": "002",
     "name": "ivysaur",
+    "types": ["grass", "poison"],
     "url": "https://pokeapi.co/api/v2/pokemon/2/"
   },
   {
+    "id": "003",
     "name": "venusaur",
+    "types": ["grass", "poison"],
     "url": "https://pokeapi.co/api/v2/pokemon/3/"
   },
   {
+    "id": "004",
     "name": "charmander",
+    "types": ["fire"],
     "url": "https://pokeapi.co/api/v2/pokemon/4/"
   },
   {
+    "id": "005",
     "name": "charmeleon",
+    "types": ["fire"],
     "url": "https://pokeapi.co/api/v2/pokemon/5/"
   },
   {
+    "id": "006",
     "name": "charizard",
+    "types": ["fire", "flying"],
     "url": "https://pokeapi.co/api/v2/pokemon/6/"
   },
   {
+    "id": "007",
     "name": "squirtle",
+    "types": ["water"],
     "url": "https://pokeapi.co/api/v2/pokemon/7/"
   },
   {
+    "id": "008",
     "name": "wartortle",
+    "types": ["water"],
     "url": "https://pokeapi.co/api/v2/pokemon/8/"
   },
   {
+    "id": "009",
     "name": "blastoise",
+    "types": ["water"],
     "url": "https://pokeapi.co/api/v2/pokemon/9/"
   }
 ]
