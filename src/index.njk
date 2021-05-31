@@ -6,6 +6,7 @@ data: pokemon
 {% import './_includes/macros/pokemon.njk' as macro %}
 {% extends 'layouts/main.njk' %}
 {% block content %}
+    <div class="max-w-sm p-3 m-4 rounded-lg shadow-lg">Testing tailwind</div>
     <ul>
         {% for pkmn in pokemon %}
             <li>
