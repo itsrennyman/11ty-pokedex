@@ -31,6 +31,16 @@ module.exports = function (config) {
     (value) => value.charAt(0).toUpperCase() + value.slice(1)
   );
 
+  //nl2space
+  config.addNunjucksFilter("nl2space", (str) =>
+    str ? str.replace(/\r|\n|\r\n/g, " ") : ""
+  );
+
+  // Sanitize
+  config.addNunjucksFilter("sanitize", (str) =>
+    str.replace(/[^a-zA-Z0-9]/g, "")
+  );
+
   return {
     dir: {
       input: "src",

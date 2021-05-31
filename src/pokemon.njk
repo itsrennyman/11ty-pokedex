@@ -15,17 +15,13 @@ permalink: '/pokemon/{{pkmn.name|slug}}/'
       {% if pagination.href.previous %}
         <a href="{{ pagination.href.previous }}" class="items-center text-white text-2xl font-extrabold">
             Previous
-            <div class="text-white text-sm font-bold">
-              Charizard
-            </div>
+            <div class="text-white text-sm font-bold"></div>
         </a>
       {% else %}&nbsp;{% endif %}
       {% if pagination.href.next %}
         <a href="{{ pagination.href.next }}" class="text-right items-center text-white text-2xl font-extrabold">
             Next
-            <div class="text-white text-sm font-bold">
-              Charizard
-            </div>
+            <div class="text-white text-sm font-bold"></div>
         </a>
       {% else %}&nbsp;{% endif %}
     </div>
@@ -41,14 +37,20 @@ permalink: '/pokemon/{{pkmn.name|slug}}/'
         pkmn.name,
         "300px 300px" %}
       </div>
-      <div class="flex space-x-10">
-        {% for type in pkmn.types %}
-          <div class="rounded-full h-24 w-24 flex items-center justify-center shadow-md p-5" style="background-color:{{ colors[type] }}">
-            {% image "./src/_includes/assets/types/" + type + ".svg",
-            type,
-            "70px 70px" %}
-          </div>
-        {% endfor %}
+      <div class="flex flex-col space-y-8 items-center">
+        <div class="flex space-x-10">
+          {% for type in pkmn.types %}
+            <div class="rounded-full h-24 w-24 flex items-center justify-center shadow-md p-5" style="background-color:{{ colors[type] }}">
+              {% image "./src/_includes/assets/types/" + type + ".svg",
+              type,
+              "70px 70px" %}
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="flex max-w-sm text-white text-2xl font-extrabold text-center">
+          {{ pkmn.description | nl2space | sanitize }}
+        </div>
       </div>
     </div>
   </div>
