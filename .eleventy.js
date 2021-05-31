@@ -2,8 +2,10 @@ const Image = require("@11ty/eleventy-img");
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
-    widths: [300, 600],
+    widths: [600],
     formats: ["avif", "jpeg"],
+    urlPath: "/images/",
+    outputDir: "./_site/images",
   });
 
   let imageAttributes = {
@@ -18,12 +20,12 @@ async function imageShortcode(src, alt, sizes) {
 }
 
 module.exports = function (config) {
-  config.addWatchTarget("./_tmp/tailwind.css");
-  config.addPassthroughCopy({ "./_tmp/tailwind.css": "./tailwind.css" });
-  config.addPassthroughCopy("img");
+  config.addWatchTarget("./_tmp/css/tailwind.css");
   config.addNunjucksAsyncShortcode("image", imageShortcode);
   config.addLiquidShortcode("image", imageShortcode);
   config.addJavaScriptFunction("image", imageShortcode);
+  //config.addPassthroughCopy({ "./_tmp/css/tailwind.css": "./tailwind.css" });
+  config.addPassthroughCopy({ "./_tmp/images": "./images" });
 
   // UcFirst
   config.addNunjucksFilter(
