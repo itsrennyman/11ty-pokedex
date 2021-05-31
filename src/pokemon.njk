@@ -1,0 +1,14 @@
+---
+pagination:
+  data: pokemon
+  alias: pkmn
+  size: 1
+
+title: "Pokemon List"
+permalink: '/pokemon/{{pkmn.name|slug}}/'
+---
+
+{% extends 'layouts/main.njk' %}
+{% block content %}
+    {{ pkmn.name }}
+{% endblock %}
