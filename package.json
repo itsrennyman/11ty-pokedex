@@ -4,12 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "predev": "npm run tailwind:process",
-    "dev": "npx @11ty/eleventy --serve",
-    "prebuild": "npm run tailwind:process",
-    "build": "NODE_ENV=production ELEVENTY_ENV=production npx @11ty/eleventy",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tailwind:process": "npx postcss src/scss/tailwind.scss --o src/_includes/assets/css/tailwind.css"
+    "dev": "eleventy --serve & postcss src/scss/tailwind.scss --o _tmp/tailwind.css --watch",
+    "build": "ELEVENTY_ENV=production eleventy && NODE_ENV=production postcss src/scss/tailwind.scss --o _site/tailwind.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
