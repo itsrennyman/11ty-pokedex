@@ -13,16 +13,20 @@ permalink: '/pokemon/{{pkmn.name|slug}}/'
   <div class="h-screen p-6 sm:p-10 bg-green-300 flex flex-col" style="background-color:{{ colors[pkmn.types[0]] }}">
     <div class="flex justify-between">
       {% if pagination.href.previous %}
-        <a href="{{ pagination.href.previous }}" class="items-center text-white text-md sm:text-2xl font-extrabold">
-          Previous
+        <a href="{{ pagination.href.previous }}" class="text-white text-md sm:text-2xl font-extrabold">
+          Prev
           <div class="text-white text-sm font-bold"></div>
         </a>
       {% else %}
         &nbsp;
       {% endif %}
 
+      <a href="/" class="text-white text-md sm:text-2xl font-extrabold">
+          Homepage
+      </a>
+
       {% if pagination.href.next %}
-        <a href="{{ pagination.href.next }}" class="text-right items-center text-white text-md sm:text-2xl font-extrabold">
+        <a href="{{ pagination.href.next }}" class="text-right text-white text-md sm:text-2xl font-extrabold">
           Next
           <div class="text-white text-sm font-bold"></div>
         </a>
