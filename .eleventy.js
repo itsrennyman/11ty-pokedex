@@ -33,7 +33,7 @@ module.exports = function (config) {
 
   // nl2space
   config.addNunjucksFilter("nl2space", (str) =>
-    str ? str.replace(/\r|\n|\r\n/g, " ") : ""
+    str ? str.replace(/\r|\n|\r\n|\f/g, " ") : ""
   );
 
   // Sanitize
