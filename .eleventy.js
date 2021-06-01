@@ -2,7 +2,7 @@ const Image = require("@11ty/eleventy-img");
 
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
-    widths: [600],
+    widths: [100, 200, 300],
     formats: ["avif", "png"],
     urlPath: "/images/",
     outputDir: "./_site/images",
